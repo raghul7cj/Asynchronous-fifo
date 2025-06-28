@@ -4,10 +4,10 @@ An efficient, dual-clock asynchronous FIFO implementation in Verilog using Gray 
 
 # overview
 
-The agray_sync_fifo is an asynchronous FIFO module where read and write operations are clocked by different clocks. It uses:
-Gray code pointers to handle synchronization across domains.
-Double-flip-flop synchronizers for metastability mitigation.Parameterized depth and data width.
-Verilog RTL (Register Transfer Level) style for easy synthesis on FPGAs.
+The agray_sync_fifo is an asynchronous FIFO module where read and write operations are clocked by different clocks. It uses: \n
+Gray code pointers to handle synchronization across domains. \n
+Double-flip-flop synchronizers for metastability mitigation.Parameterized depth and data width. \n
+Verilog RTL (Register Transfer Level) style for easy synthesis on FPGAs.\n
 
 # Features
 
