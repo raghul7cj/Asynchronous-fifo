@@ -44,3 +44,13 @@ You may write a testbench (`agray_sync_fifo_tb.v`) to simulate read/write operat
 
 ---
 
+# edit / usecase 
+- Using *_ptr_gray_next Can Be Justified instead of *_ptr_gray
+- This is useful in:
+- Pipelined write logic
+- Multi-stage FIFOs
+- Zero-latency systems, where stalling early is better than risking corruption
+- CONS OF USING THE ABOVE MENTIONED TECHNIQUE
+- Over-conservatism: It may block a write one cycle earlier than truly needed — particularly if the read pointer moves in the same cycle.
+- Wasted space: One location in the FIFO may remain unused (this is the typical “one-slot empty” problem in circular buffers)
+
