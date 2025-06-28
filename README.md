@@ -18,7 +18,7 @@ Parameterizable data_width and fifo_depth
 Full and Empty flag detection
 Memory-efficient design with reg-based storage
 
-# 🧪 Test Suggestions
+# Test Suggestions
 
 Write a testbench to validate:
 Normal read/write flow with async clocks
