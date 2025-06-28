@@ -1,27 +1,46 @@
-# Asynchronous-fifo
+# Asynchronous-FIFO
 
-An efficient, dual-clock asynchronous FIFO implementation in Verilog using Gray code pointer synchronization and proper CDC (Clock Domain Crossing) techniques.
+An efficient, dual-clock asynchronous FIFO implemented in Verilog using Gray code pointer synchronization and safe Clock Domain Crossing (CDC) techniques.
 
-# overview
+---
 
-The agray_sync_fifo is an asynchronous FIFO module where read and write operations are clocked by different clocks. It uses: 
-Gray code pointers to handle synchronization across domains. 
-Double-flip-flop synchronizers for metastability mitigation.Parameterized depth and data width. 
-Verilog RTL (Register Transfer Level) style for easy synthesis on FPGAs.
+## Overview
 
-# Features
+The `agray_sync_fifo` module supports read and write operations on independent clock domains. Key techniques used:
 
-Dual clock domain support (wr_clk, rd_clk)
-Proper CDC (clock domain crossing) via double synchronizers
-Gray code pointer logic for safe cross-domain comparison
-Parameterizable data_width and fifo_depth
-Full and Empty flag detection
-Memory-efficient design with reg-based storage
+- Gray code for pointer synchronization across domains  
+- Double flip-flop synchronizers to avoid metastability  
+- Parameterizable `fifo_depth` and `data_width`  
+- Simple Verilog RTL design, suitable for FPGA synthesis
 
-# Test Suggestions
+---
 
-Write a testbench to validate:
-Normal read/write flow with async clocks
-Full and empty conditions
-Pointer wraparound behavior
-CDC correctness (no data corruption at any point)
+## Features
+
+- Dual clock domain support (`wr_clk`, `rd_clk`)
+- Safe CDC via double synchronizers
+- Gray-coded pointer comparison
+- Parameterized depth and width
+- Full and empty flag logic
+- Compact memory usage with register-based storage
+
+---
+
+## Test Suggestions
+
+To verify the design, test for:
+
+- Normal read/write behavior with different clocks
+- Full and empty conditions
+- Pointer wrap-around scenarios
+- Cross-domain synchronization integrity
+
+---
+
+## Usage
+
+Include `agray_sync_fifo.v` in your Verilog project.  
+You may write a testbench (`agray_sync_fifo_tb.v`) to simulate read/write operations and observe full/empty flags.
+
+---
+
