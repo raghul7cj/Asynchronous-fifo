@@ -37,12 +37,6 @@ To verify the design, test for:
 
 ---
 
-## Usage
-
-Include `agray_sync_fifo.v` in your Verilog project.  
-You may write a testbench (`agray_sync_fifo_tb.v`) to simulate read/write operations and observe full/empty flags.
-
----
 
 # edit / usecase 
 - Using *_ptr_gray_next Can Be Justified instead of *_ptr_gray
